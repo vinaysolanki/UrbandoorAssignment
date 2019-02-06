@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_011558) do
+ActiveRecord::Schema.define(version: 2019_02_06_021806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "amenities", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "amenity_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "property_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_011558) do
     t.integer "baths"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "property_id"
   end
 
 end
